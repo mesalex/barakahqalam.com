@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-50: #f5f3ff;
+  --color-purple-100: #ede9fe;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-400: #f472b6;
+  --color-pink-600: #db2777;
+  --color-rose-50: #fff1f2;
+  --color-rose-400: #fb7185;
+}
