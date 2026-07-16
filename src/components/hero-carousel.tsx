@@ -71,7 +71,7 @@ export default function HeroCarousel() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full max-w-4xl mx-auto mb-6 rounded-lg shadow-2xl"
+              className="w-full mx-auto mb-6 rounded-lg shadow-2xl"
             />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
               {slide.title}
