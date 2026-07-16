@@ -8,42 +8,35 @@ export default function HeroCarousel() {
     {
       title: "99 Names of Allah",
       subtitle: "A beautiful collection of Islamic calligraphy coloring pages featuring the 99 Names of Allah.",
-      image: "📖",
+      image: "/carousel/3.png",
       cta: "View Book",
       link: "#"
     },
     {
       title: "Islamic Geometric Patterns",
       subtitle: "Master the art of Islamic geometric design with these intricate coloring pages.",
-      image: "🎨",
+      image: "/carousel/009.png",
       cta: "View Book",
       link: "#"
     },
     {
       title: "Arabic Calligraphy Basics",
       subtitle: "Learn the fundamentals of Arabic calligraphy with beginner-friendly coloring exercises.",
-      image: "✨",
+      image: "/carousel/011.png",
       cta: "View Book",
       link: "#"
     },
     {
       title: "Mosque Architecture",
       subtitle: "Explore stunning mosque designs from around the world with detailed coloring pages.",
-      image: "🕌",
+      image: "/carousel/16.png",
       cta: "View Book",
       link: "#"
     },
     {
       title: "Prophetic Stories",
       subtitle: "Beautiful illustrations of beloved Islamic stories with educational coloring pages.",
-      image: "🌟",
-      cta: "View Book",
-      link: "#"
-    },
-    {
-      title: "Moon & Stars",
-      subtitle: "Celestial Islamic designs featuring moon phases, stars, and cosmic patterns.",
-      image: "🌙",
+      image: "/carousel/009.png",
       cta: "View Book",
       link: "#"
     }
@@ -76,9 +69,11 @@ export default function HeroCarousel() {
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-4">
-              <div className="text-9xl md:text-[200px] mb-6 animate-pulse">
-                {slide.image}
-              </div>
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full max-w-2xl mx-auto mb-6 rounded-lg shadow-2xl"
+              />
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 {slide.title}
               </h1>
