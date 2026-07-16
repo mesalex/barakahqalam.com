@@ -1,0 +1,137 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+export default function HeroCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      title: "99 Names of Allah",
+      subtitle: "A beautiful collection of Islamic calligraphy coloring pages featuring the 99 Names of Allah.",
+      image: "📖",
+      cta: "View Book",
+      link: "#"
+    },
+    {
+      title: "Islamic Geometric Patterns",
+      subtitle: "Master the art of Islamic geometric design with these intricate coloring pages.",
+      image: "🎨",
+      cta: "View Book",
+      link: "#"
+    },
+    {
+      title: "Arabic Calligraphy Basics",
+      subtitle: "Learn the fundamentals of Arabic calligraphy with beginner-friendly coloring exercises.",
+      image: "✨",
+      cta: "View Book",
+      link: "#"
+    },
+    {
+      title: "Mosque Architecture",
+      subtitle: "Explore stunning mosque designs from around the world with detailed coloring pages.",
+      image: "🕌",
+      cta: "View Book",
+      link: "#"
+    },
+    {
+      title: "Prophetic Stories",
+      subtitle: "Beautiful illustrations of beloved Islamic stories with educational coloring pages.",
+      image: "🌟",
+      cta: "View Book",
+      link: "#"
+    },
+    {
+      title: "Moon & Stars",
+      subtitle: "Celestial Islamic designs featuring moon phases, stars, and cosmic patterns.",
+      image: "🌙",
+      cta: "View Book",
+      link: "#"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-gradient-to-br from-amber-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center px-4">
+              <div className="text-9xl md:text-[200px] mb-6 animate-pulse">
+                {slide.image}
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                {slide.title}
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                {slide.subtitle}
+              </p>
+              <a
+                href={slide.link}
+                className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105"
+              >
+                {slide.cta}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Navigation Buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-4 rounded-full shadow-lg transition-all z-10"
+        aria-label="Previous slide"
+      >
+        <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-4 rounded-full shadow-lg transition-all z-10"
+        aria-label="Next slide"
+      >
+        <svg className="w-8 h-8 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide
+                ? 'bg-amber-500 w-8'
+                : 'bg-gray-400 hover:bg-gray-500'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}

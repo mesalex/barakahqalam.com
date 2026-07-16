@@ -12,7 +12,7 @@ export default function ApparelPage() {
       {/* Hero Section */}
       <section className="section">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Islamic Apparel
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -21,83 +21,107 @@ export default function ApparelPage() {
         </div>
       </section>
 
-      {/* Apparel Grid */}
+      {/* Apparel List */}
       <section className="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Apparel Card 1 */}
-            <div className="apparel-card">
-              <div className="apparel-image flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="text-5xl mb-2">👕</div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+        <div className="max-w-5xl mx-auto">
+          <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
+            <div className="py-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/2 aspect-[2/3] bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-8xl mb-4">👕</div>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">"Inna Lillahi" T-Shirt</h3>
-                <a
-                  href="#"
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
-                >
-                  Buy on Amazon
-                </a>
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    "Inna Lillahi" T-Shirt
+                  </h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    Wear your faith with this beautiful "Inna Lillahi" Islamic calligraphy t-shirt.
+                  </p>
+                  <a
+                    href="#"
+                    className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+                  >
+                    Buy on Amazon
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Apparel Card 2 */}
-            <div className="apparel-card">
-              <div className="apparel-image flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="text-5xl mb-2">👕</div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+            <div className="py-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/2 aspect-[2/3] bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-8xl mb-4">👕</div>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">"Alhamdulillah" Tee</h3>
-                <a
-                  href="#"
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
-                >
-                  Buy on Amazon
-                </a>
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    "Alhamdulillah" Tee
+                  </h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    Beautiful "Alhamdulillah" Islamic calligraphy t-shirt for daily wear.
+                  </p>
+                  <a
+                    href="#"
+                    className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+                  >
+                    Buy on Amazon
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Apparel Card 3 */}
-            <div className="apparel-card">
-              <div className="apparel-image flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="text-5xl mb-2">👕</div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+            <div className="py-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/2 aspect-[2/3] bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-8xl mb-4">👕</div>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Islamic Geometric Tee</h3>
-                <a
-                  href="#"
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
-                >
-                  Buy on Amazon
-                </a>
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    Islamic Geometric Tee
+                  </h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    Stunning Islamic geometric pattern t-shirt with modern design.
+                  </p>
+                  <a
+                    href="#"
+                    className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+                  >
+                    Buy on Amazon
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Apparel Card 4 */}
-            <div className="apparel-card">
-              <div className="apparel-image flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="text-5xl mb-2">👕</div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+            <div className="py-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-full md:w-1/2 aspect-[2/3] bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-8xl mb-4">👕</div>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">T-Shirt Design Placeholder</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">Bismillah Hoodie</h3>
-                <a
-                  href="#"
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
-                >
-                  Buy on Amazon
-                </a>
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    Bismillah Hoodie
+                  </h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    Cozy "Bismillah" Islamic calligraphy hoodie for cold days.
+                  </p>
+                  <a
+                    href="#"
+                    className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+                  >
+                    Buy on Amazon
+                  </a>
+                </div>
               </div>
             </div>
           </div>
