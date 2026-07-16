@@ -1,141 +1,207 @@
-"use client";
+'use client';
 
-import { notFound } from "next/navigation";
-import { useState } from "react";
-import ProductGrid from "@/components/products/ProductGrid";
-import DesignFilter from "./components/DesignFilter";
-
-// Mock data - will be replaced with Sanity CMS
-const mockProducts = [
-  {
-    _id: "1",
-    title: "Islamic Geometric Pattern T-Shirt",
-    displayImage: {
-      url: "/images/apparel/islamic-geometric.jpg",
-    },
-    category: "apparel",
-    tags: ["geometric", "islamic", "minimalist"],
-    amazonMerchLink: "https://amazon.com/dp/example1",
-    gumroadLink: "https://gumroad.com/example1",
-  },
-  {
-    _id: "2",
-    title: "Arabic Calligraphy Hoodie",
-    displayImage: {
-      url: "/images/apparel/arabic-calligraphy.jpg",
-    },
-    category: "apparel",
-    tags: ["calligraphy", "arabic", "minimalist"],
-    amazonMerchLink: "https://amazon.com/dp/example2",
-  },
-  {
-    _id: "3",
-    title: "Minimalist Crescent Moon Tee",
-    displayImage: {
-      url: "/images/apparel/crescent-moon.jpg",
-    },
-    category: "apparel",
-    tags: ["minimalist", "moon", "symbolic"],
-    amazonMerchLink: "https://amazon.com/dp/example3",
-  },
-  {
-    _id: "4",
-    title: "Geometric Flower Mandala Shirt",
-    displayImage: {
-      url: "/images/apparel/geometric-flower.jpg",
-    },
-    category: "apparel",
-    tags: ["geometric", "flower", "mandala"],
-    amazonMerchLink: "https://amazon.com/dp/example4",
-  },
-  {
-    _id: "5",
-    title: "Islamic Star Pattern Hoodie",
-    displayImage: {
-      url: "/images/apparel/islamic-star.jpg",
-    },
-    category: "apparel",
-    tags: ["geometric", "islamic", "star"],
-    amazonMerchLink: "https://amazon.com/dp/example5",
-  },
-  {
-    _id: "6",
-    title: "Arabic Blessing Typography",
-    displayImage: {
-      url: "/images/apparel/arabic-blessing.jpg",
-    },
-    category: "apparel",
-    tags: ["calligraphy", "arabic", "typography"],
-    amazonMerchLink: "https://amazon.com/dp/example6",
-  },
-  {
-    _id: "7",
-    title: "Islamic Archway Design Tee",
-    displayImage: {
-      url: "/images/apparel/islamic-archway.jpg",
-    },
-    category: "apparel",
-    tags: ["geometric", "islamic", "arch"],
-    amazonMerchLink: "https://amazon.com/dp/example7",
-  },
-  {
-    _id: "8",
-    title: "Minimalist Dove Peace Shirt",
-    displayImage: {
-      url: "/images/apparel/dove-peace.jpg",
-    },
-    category: "apparel",
-    tags: ["minimalist", "dove", "peace"],
-    amazonMerchLink: "https://amazon.com/dp/example8",
-  },
-];
+import Link from 'next/link';
 
 export default function ApparelPage() {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-
-  // Filter products by selected tags
-  const filteredProducts =
-    selectedTags.length === 0
-      ? mockProducts
-      : mockProducts.filter((product) =>
-          selectedTags.some((tag) => product.tags.includes(tag))
-        );
-
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Apparel Collection
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
+      {/* Header */}
+      <nav className="navbar">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-amber-600">
+            Barakah Qalam
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/books" className="nav-link">
+              Books
+            </Link>
+            <Link href="/apparel" className="nav-link">
+              Apparel
+            </Link>
+            <Link href="/free-resources" className="nav-link">
+              Free Resources
+            </Link>
+            <Link href="/about" className="nav-link">
+              About
+            </Link>
+            <Link href="/contact" className="nav-link">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="section">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Islamic Apparel
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our premium collection of minimalist Islamic designs on apparel
+          <p className="text-xl text-gray-600">
+            Wear your faith with beautiful Islamic-inspired t-shirt designs
           </p>
         </div>
+      </section>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Filter Sidebar */}
-          <aside className="lg:w-64 flex-shrink-0">
-            <DesignFilter
-              products={mockProducts}
-            />
-          </aside>
-
-          {/* Products Grid */}
-          <main className="flex-1">
-            {filteredProducts.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
-                  No products found matching your filters
-                </p>
+      {/* Apparel Grid */}
+      <section className="section bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Apparel Card 1 */}
+            <div className="apparel-card">
+              <div className="apparel-image flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="text-5xl mb-2">👕</div>
+                  <p className="text-gray-600 text-sm">T-Shirt Design Placeholder</p>
+                </div>
               </div>
-            ) : (
-              <ProductGrid products={filteredProducts} />
-            )}
-          </main>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">"Inna Lillahi" T-Shirt</h3>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
+                >
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+
+            {/* Apparel Card 2 */}
+            <div className="apparel-card">
+              <div className="apparel-image flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="text-5xl mb-2">👕</div>
+                  <p className="text-gray-600 text-sm">T-Shirt Design Placeholder</p>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">"Alhamdulillah" Tee</h3>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
+                >
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+
+            {/* Apparel Card 3 */}
+            <div className="apparel-card">
+              <div className="apparel-image flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="text-5xl mb-2">👕</div>
+                  <p className="text-gray-600 text-sm">T-Shirt Design Placeholder</p>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Islamic Geometric Tee</h3>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
+                >
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+
+            {/* Apparel Card 4 */}
+            <div className="apparel-card">
+              <div className="apparel-image flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="text-5xl mb-2">👕</div>
+                  <p className="text-gray-600 text-sm">T-Shirt Design Placeholder</p>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">Bismillah Hoodie</h3>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors text-sm"
+                >
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold text-amber-600 mb-4">
+                Barakah Qalam
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Creating thoughtful Islamic art and literature to inspire and educate.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>
+                  <Link href="/books" className="hover:text-amber-600">
+                    Books
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/apparel" className="hover:text-amber-600">
+                    Apparel
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/free-resources" className="hover:text-amber-600">
+                    Free Resources
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-amber-600">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-amber-600">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Connect With Us</h4>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  🐦
+                </a>
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  📸
+                </a>
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  📱
+                </a>
+              </div>
+              <p className="text-sm text-gray-500 mt-4">
+                © 2024 Barakah Qalam. All rights reserved.
+              </p>
+              <p className="text-sm text-gray-500 mt-2">
+                <Link href="/privacy-policy" className="hover:text-amber-600">
+                  Privacy Policy
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

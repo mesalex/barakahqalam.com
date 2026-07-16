@@ -1,209 +1,232 @@
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
 
 export default function FreeResourcesPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
+      {/* Header */}
+      <nav className="navbar">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-amber-600">
+            Barakah Qalam
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/books" className="nav-link">
+              Books
+            </Link>
+            <Link href="/apparel" className="nav-link">
+              Apparel
+            </Link>
+            <Link href="/free-resources" className="nav-link">
+              Free Resources
+            </Link>
+            <Link href="/about" className="nav-link">
+              About
+            </Link>
+            <Link href="/contact" className="nav-link">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="section">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Free Resources
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Download free coloring pages and samples. No sign-up required.
+          <p className="text-xl text-gray-600">
+            Download free Islamic coloring pages, templates, and educational materials
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Sample 1 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-emerald-100 to-emerald-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🌸</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Mandala Flower
-                  </h3>
+      {/* Free Resources Grid */}
+      <section className="section bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Resource Card 1 */}
+            <div className="book-card">
+              <div className="book-image flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="text-6xl mb-4">🎁</div>
+                  <p className="text-gray-600 text-sm">Free Download Placeholder</p>
                 </div>
               </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Mandala Flower Pattern
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Intricate flower mandala for relaxation
-              </p>
-              <Link
-                href="/downloads/mandala-flower.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
-
-          {/* Sample 2 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-amber-100 to-amber-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🔷</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Geometric Pattern
-                  </h3>
-                </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">
+                  99 Names of Allah - Free Preview
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Get a sneak peek at our premium coloring bundle with 10 free pages.
+                </p>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors w-full"
+                >
+                  Download Free Preview
+                </a>
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Islamic Geometric Design
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Traditional geometric pattern
-              </p>
-              <Link
-                href="/downloads/geometric-pattern.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
 
-          {/* Sample 3 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-blue-100 to-blue-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🌙</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Crescent Moon
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Crescent Moon Design
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Minimalist crescent moon pattern
-              </p>
-              <Link
-                href="/downloads/crescent-moon.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
-
-          {/* Sample 4 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-purple-100 to-purple-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🕋</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Mosque Architecture
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Mosque Arch Pattern
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Traditional mosque arch design
-              </p>
-              <Link
-                href="/downloads/mosque-arch.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
-
-          {/* Sample 5 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-green-100 to-green-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🌿</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Islamic Foliate
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Islamic Foliate Pattern
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Elegant leaf and vine design
-              </p>
-              <Link
-                href="/downloads/islamic-foliate.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
-
-          {/* Sample 6 */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <div className="aspect-[1] bg-gradient-to-br from-red-100 to-red-200 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
+            {/* Resource Card 2 */}
+            <div className="book-card">
+              <div className="book-image flex items-center justify-center">
+                <div className="text-center p-8">
                   <div className="text-6xl mb-4">✨</div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    Star Pattern
-                  </h3>
+                  <p className="text-gray-600 text-sm">Free Download Placeholder</p>
                 </div>
               </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">
+                  Islamic Geometric Template Pack
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Free vector templates for creating your own Islamic geometric art.
+                </p>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors w-full"
+                >
+                  Download Templates
+                </a>
+              </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Islamic Star Design
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Eight-pointed star pattern
-              </p>
-              <Link
-                href="/downloads/islamic-star.pdf"
-                className="block w-full bg-emerald-700 hover:bg-emerald-800 text-white text-center py-3 px-6 rounded-lg font-semibold transition-colors"
-              >
-                Download PDF
-              </Link>
-            </div>
-          </div>
-        </div>
 
-        {/* Newsletter Section */}
-        <div className="mt-16 bg-gradient-to-r from-emerald-700 to-amber-600 rounded-2xl p-8 text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Get More Free Samples
-          </h2>
-          <p className="text-lg mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter and get exclusive coloring pages every month.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 px-6 py-4 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button className="bg-white text-emerald-700 px-8 py-4 rounded-lg font-semibold transition-colors">
-              Subscribe
-            </button>
+            {/* Resource Card 3 */}
+            <div className="book-card">
+              <div className="book-image flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="text-6xl mb-4">🌙</div>
+                  <p className="text-gray-600 text-sm">Free Download Placeholder</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">
+                  Moon Phase Calendar Coloring
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Monthly moon phases calendar with beautiful Islamic designs.
+                </p>
+                <a
+                  href="#"
+                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded text-center transition-colors w-full"
+                >
+                  Download Calendar
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="section">
+        <div className="max-w-3xl mx-auto">
+          <div className="reader-magnet">
+            <h2 className="text-3xl font-bold mb-4">
+              Get More Free Resources
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Join our community and receive free Islamic art resources, updates on new releases, and exclusive discounts.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="email-input"
+              />
+              <button className="cta-button">
+                Subscribe
+              </button>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-4">
+              🎁 Free resources • No spam • Unsubscribe anytime
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-bold text-amber-600 mb-4">
+                Barakah Qalam
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Creating thoughtful Islamic art and literature to inspire and educate.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>
+                  <Link href="/books" className="hover:text-amber-600">
+                    Books
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/apparel" className="hover:text-amber-600">
+                    Apparel
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/free-resources" className="hover:text-amber-600">
+                    Free Resources
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-amber-600">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-amber-600">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Connect With Us</h4>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  🐦
+                </a>
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  📸
+                </a>
+                <a
+                  href="#"
+                  className="text-2xl hover:text-amber-600 transition-colors"
+                >
+                  📱
+                </a>
+              </div>
+              <p className="text-sm text-gray-500 mt-4">
+                © 2024 Barakah Qalam. All rights reserved.
+              </p>
+              <p className="text-sm text-gray-500 mt-2">
+                <Link href="/privacy-policy" className="hover:text-amber-600">
+                  Privacy Policy
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

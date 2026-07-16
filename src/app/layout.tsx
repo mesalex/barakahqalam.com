@@ -1,44 +1,20 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/navigation/Navbar";
-import Footer from "@/components/navigation/Footer";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Barakah Qalam - Beautiful Coloring Books",
-  description: "Handcrafted coloring books with free samples. Download mandalas, flowers, and intricate patterns for relaxation and creativity.",
-  keywords: "coloring book, adult coloring, mandala, coloring pages, free samples",
-  openGraph: {
-    title: "Barakah Qalam - Beautiful Coloring Books",
-    description: "Handcrafted coloring books with free samples",
-    type: "website",
-  },
+  title: 'Barakah Qalam | Thoughtful Islamic Art & Literature',
+  description: 'Explore our collection of Islamic coloring books, calligraphy art, and educational resources. Join our community and get exclusive free content.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-gray-50">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className="min-h-screen bg-white text-gray-900 font-sans">
+        {children}
       </body>
     </html>
   );
