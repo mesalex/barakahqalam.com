@@ -14,37 +14,6 @@ export default function Home() {
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Reader Magnet */}
-      <section className="section">
-        <div className="max-w-5xl mx-auto">
-          <div className="reader-magnet">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Thoughtful Islamic Art & Literature
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Join our community and get an exclusive, high-resolution{' '}
-              <span className="text-amber-600 font-semibold dark:text-amber-400">"99 Names of Allah"</span>{' '}
-              calligraphy coloring bundle sent directly to your inbox.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="email-input"
-              />
-              <button className="cta-button">
-                Send Me My Free Pages
-              </button>
-            </div>
-
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-              🎁 Free gift • No spam • Unsubscribe anytime
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Blog Feed */}
       <BlogFeed />
 

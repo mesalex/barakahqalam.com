@@ -99,6 +99,33 @@ export default function BlogFeed() {
           ))}
         </div>
 
+        {/* Newsletter Signup - Added at bottom of blog feed */}
+        <div className="mt-16 p-8 bg-gradient-to-br from-amber-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-lg">
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              Get More Free Resources
+            </h3>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              Join our community and receive free Islamic art resources, updates on new releases, and exclusive discounts.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="email-input"
+              />
+              <button className="cta-button">
+                Subscribe
+              </button>
+            </div>
+
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+              🎁 Free resources • No spam • Unsubscribe anytime
+            </p>
+          </div>
+        </div>
+
         <div className="text-center mt-12">
           <a
             href="#"
