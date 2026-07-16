@@ -59,7 +59,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-[400px]">
       <div className="relative max-w-5xl mx-auto px-4">
         {slides.map((slide, index) => (
           <div
@@ -93,7 +93,7 @@ export default function HeroCarousel() {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 md:left-4 top-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-3 rounded-full shadow-lg transition-all z-50"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-3 rounded-full shadow-lg transition-all z-50"
           aria-label="Previous slide"
         >
           <svg className="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@ export default function HeroCarousel() {
 
         <button
           onClick={nextSlide}
-          className="absolute right-0 md:right-4 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-3 rounded-full shadow-lg transition-all z-50"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-3 rounded-full shadow-lg transition-all z-50"
           aria-label="Next slide"
         >
           <svg className="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
