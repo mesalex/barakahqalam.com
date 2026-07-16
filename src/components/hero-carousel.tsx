@@ -64,14 +64,14 @@ export default function HeroCarousel() {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          <div className="relative h-full flex flex-col items-center justify-center px-4">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full mx-auto mb-6 rounded-lg shadow-2xl"
+              className="w-full h-auto max-h-[70vh] object-contain mb-6 rounded-lg shadow-2xl"
             />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
               {slide.title}
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-2 md:p-4 rounded-full shadow-lg transition-all z-10"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-2 md:p-4 rounded-full shadow-lg transition-all z-50"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6 md:w-8 md:h-8 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ export default function HeroCarousel() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-2 md:p-4 rounded-full shadow-lg transition-all z-10"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-700 p-2 md:p-4 rounded-full shadow-lg transition-all z-50"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6 md:w-8 md:h-8 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ export default function HeroCarousel() {
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-50">
         {slides.map((_, index) => (
           <button
             key={index}
