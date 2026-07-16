@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/ (temporarily allowing for GitHub Pages static export)
 
 # production
 /build
