@@ -13,6 +13,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
+.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+}
+
 /* Reader magnet form styles */
 .reader-magnet {
   background: linear-gradient(135deg, #fef9f3 0%, #fff 100%);
@@ -23,6 +28,12 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.dark .reader-magnet {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 2px solid #4b5563;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
 .email-input {
   width: 100%;
   max-width: 400px;
@@ -31,6 +42,14 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.2s ease;
+  background: white;
+  color: #1f2937;
+}
+
+.dark .email-input {
+  background: #374151;
+  color: #f9fafb;
+  border-color: #4b5563;
 }
 
 .email-input:focus {
@@ -66,9 +85,18 @@ body {
   transition: all 0.3s ease;
 }
 
+.dark .book-card {
+  background: #1f2937;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .book-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dark .book-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .book-image {
@@ -76,6 +104,10 @@ body {
   height: 400px;
   object-fit: cover;
   background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.dark .book-image {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
 }
 
 /* Apparel card styles */
@@ -87,9 +119,18 @@ body {
   transition: all 0.3s ease;
 }
 
+.dark .apparel-card {
+  background: #1f2937;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .apparel-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dark .apparel-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .apparel-image {
@@ -97,6 +138,10 @@ body {
   height: 350px;
   object-fit: cover;
   background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.dark .apparel-image {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
 }
 
 /* Navigation */
@@ -109,12 +154,21 @@ body {
   z-index: 50;
 }
 
+.dark .navbar {
+  background: #1f2937;
+  border-bottom: 1px solid #4b5563;
+}
+
 .nav-link {
   color: #4b5563;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
   transition: color 0.2s ease;
+}
+
+.dark .nav-link {
+  color: #d1d5db;
 }
 
 .nav-link:hover {
@@ -126,6 +180,10 @@ body {
   background: #f9fafb;
   padding: 3rem 2rem;
   margin-top: 4rem;
+}
+
+.dark .footer {
+  background: #111827;
 }
 
 /* Section spacing */
