@@ -3,6 +3,7 @@ import { ThemeProvider } from './theme-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://barakahqalam.com'),
   title: 'Barakah Qalam | Thoughtful Islamic Art & Literature',
   description: 'Explore our collection of Islamic coloring books, calligraphy art, and educational resources. Join our community and get exclusive free content.',
 };

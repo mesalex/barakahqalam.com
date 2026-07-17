@@ -281,6 +281,56 @@ Perfect for:
       "Islamic pattern book",
     ],
   },
+  {
+    slug: "sample-book-preview",
+    title: "Sample Book Preview",
+    subtitle: "A demonstration page to preview the book detail layout with lorem ipsum placeholder content.",
+    description:
+      "This is a sample book entry designed to showcase the book detail page layout. It contains ample lorem ipsum text to demonstrate typography, spacing, and design elements.",
+    longDescription: `## Chapter I — Origins
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Chapter II — The Journey
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+
+• Beautifully crafted pages with intricate patterns
+• High-quality paper suitable for all coloring mediums
+• Single-sided designs to prevent bleed-through
+• Inspirational quotes and reflections throughout
+• Perfect for beginners and experienced colorists alike
+
+## Chapter III — The Art
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+
+## Chapter IV — The Reflection
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.`,
+    coverImage: "/carousel/16.png",
+    carouselImage: "/carousel/16.png",
+    price: "$9.99",
+    amazonUrl:
+      "https://www.amazon.com/dp/B0EXAMPLE?tag=barakahqalam-20",
+    gumroadUrl: "https://gumroad.com/l/sample-book",
+    category: "Educational",
+    pages: 144,
+    format: "8.5 x 11 inches, Paperback",
+    seoKeywords: [
+      "sample coloring book",
+      "lorem ipsum preview",
+      "book layout demo",
+      "Islamic art preview",
+      "coloring book sample",
+    ],
+  },
 ];
 
 export function getBookBySlug(slug: string): Book | undefined {

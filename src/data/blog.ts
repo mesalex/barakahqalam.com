@@ -328,6 +328,83 @@ Explore this rich heritage through our collection of [Islamic art coloring books
       "world art history",
     ],
   },
+  {
+    slug: "sample-blog-post-preview",
+    title: "Sample Blog Post — Lorem Ipsum Preview of Full Article Layout",
+    date: "2026-07-17",
+    excerpt:
+      "A comprehensive demonstration of the blog post detail page layout with extensive lorem ipsum content to showcase typography, heading hierarchy, lists, and overall reading experience.",
+    content: `## Introduction to the Art of Design
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+The foundation of any great design begins with understanding the relationship between form and function. When we look at traditional arts, we see patterns that have been refined over centuries — each element serving both an aesthetic and a spiritual purpose.
+
+## The Principles of Composition
+
+### Balance and Harmony
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+**Key principles to remember:**
+
+- **Proportion** — the relationship between elements creates visual rhythm
+- **Emphasis** — focal points guide the viewer's eye through the composition
+- **Unity** — all elements must work together as a coherent whole
+- **Contrast** — differences in size, color, and texture create visual interest
+- **Repetition** — recurring motifs reinforce the underlying structure
+
+### Color Theory in Practice
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+1. Start with a limited palette of 3-5 colors
+2. Establish a dominant color for the primary elements
+3. Use secondary colors for supporting details
+4. Reserve accent colors for highlights and focal points
+5. Test your palette in both light and dark contexts
+
+## The Process of Creation
+
+### Finding Inspiration
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+The creative process is not linear — it ebbs and flows like the tide. Some days bring clarity and productivity; others require patience and reflection. Both are essential parts of the journey.
+
+### Tools and Techniques
+
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+**Essential tools for beginners:**
+
+- A quality sketchbook with medium-weight paper
+- Graphite pencils in varying hardness (2H through 6B)
+- A reliable eraser — both kneaded and precision types
+- A ruler and compass for geometric constructions
+- Colored pencils or watercolors for adding depth
+
+## Reflection and Growth
+
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
+
+Every piece you create is a stepping stone. The most important thing is not perfection but consistency — showing up, doing the work, and allowing yourself to grow through the process. The masters of any craft were once beginners who refused to give up.
+
+## Conclusion
+
+Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+Thank you for exploring this sample post. We hope it gives you a clear picture of how your content will look and feel on Barakah Qalam. Happy creating!`,
+    category: "Tutorial",
+    seoKeywords: [
+      "blog post preview",
+      "lorem ipsum sample",
+      "article layout demo",
+      "Islamic art blog",
+      "design tutorial sample",
+    ],
+    image: "/carousel/16.png",
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

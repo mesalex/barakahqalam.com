@@ -6,15 +6,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return books.map((book) => ({ slug: book.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const book = getBookBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const book = getBookBySlug(slug);
   if (!book) return { title: 'Book Not Found' };
   return {
     title: `${book.title} | Barakah Qalam`,
@@ -28,8 +29,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BookDetailPage({ params }: Props) {
-  const book = getBookBySlug(params.slug);
+export default async function BookDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const book = getBookBySlug(slug);
   if (!book) notFound();
 
   return (
