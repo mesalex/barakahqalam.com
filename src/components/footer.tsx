@@ -17,33 +17,13 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <li>
-                <Link href="/books" className="hover:text-amber-600 dark:hover:text-amber-400">
-                  Books
-                </Link>
-              </li>
-              <li>
-                <Link href="/apparel" className="hover:text-amber-600 dark:hover:text-amber-400">
-                  Apparel
-                </Link>
-              </li>
-              <li>
-                <Link href="/free-resources" className="hover:text-amber-600 dark:hover:text-amber-400">
-                  Free Resources
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-amber-600 dark:hover:text-amber-400">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-amber-600 dark:hover:text-amber-400">
-                  Contact
-                </Link>
-              </li>
-            </ul>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <Link href="/books" className="hover:text-amber-600 dark:hover:text-amber-400">Books</Link>
+              <Link href="/apparel" className="hover:text-amber-600 dark:hover:text-amber-400">Apparel</Link>
+              <Link href="/free-resources" className="hover:text-amber-600 dark:hover:text-amber-400">Free Resources</Link>
+              <Link href="/about" className="hover:text-amber-600 dark:hover:text-amber-400">About</Link>
+              <Link href="/contact" className="hover:text-amber-600 dark:hover:text-amber-400">Contact</Link>
+            </div>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Connect With Us</h4>
