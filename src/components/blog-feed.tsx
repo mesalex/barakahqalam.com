@@ -69,12 +69,9 @@ export default function BlogFeed() {
   return (
     <section className="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
           Latest from Our Blog
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-10">
-          Insights, tutorials, and stories from the world of Islamic art and literature
-        </p>
 
         <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
           {posts.map((post, index) => (

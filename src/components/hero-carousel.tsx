@@ -61,7 +61,7 @@ export default function HeroCarousel() {
 
       {/* ===== MOBILE: Carousel (one square slide) ===== */}
       <div className="relative md:hidden max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-        <div className="relative" style={{ minHeight: '520px' }}>
+        <div className="relative" style={{ minHeight: '380px' }}>
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -92,12 +92,9 @@ export default function HeroCarousel() {
               </Link>
 
               <div className="w-full text-center px-2">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-md mx-auto">
-                  {slide.subtitle}
-                </p>
               </div>
             </div>
           ))}
