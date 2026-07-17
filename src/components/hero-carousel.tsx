@@ -60,8 +60,8 @@ export default function HeroCarousel() {
     <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
 
       {/* ===== MOBILE: Carousel (one square slide) ===== */}
-      <div className="relative md:hidden max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-        <div className="relative" style={{ minHeight: '380px' }}>
+      <div className="relative md:hidden max-w-6xl mx-auto py-4 sm:py-6">
+        <div className="relative" style={{ minHeight: '440px' }}>
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -77,7 +77,7 @@ export default function HeroCarousel() {
                 href={slide.link}
                 className="w-full flex items-center justify-center group"
               >
-                <div className="relative w-full max-w-[320px] aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 group-hover:shadow-amber-500/30 group-hover:scale-[1.02] transition-all duration-300">
+                <div className="relative w-full aspect-square overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 group-hover:shadow-amber-500/30 group-hover:scale-[1.02] transition-all duration-300">
                   <img
                     src={slide.image}
                     alt={slide.title}

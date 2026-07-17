@@ -70,51 +70,33 @@ export default function BlogFeed() {
     <section className="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Latest from Our Blog
+          From the Studio
         </h2>
 
         <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
           {posts.map((post, index) => (
             <article
               key={post.slug}
-              className="py-8 md:py-10"
+              className="py-6 md:py-8"
             >
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                {/* Date Column */}
-                <div className="md:w-40 flex-shrink-0">
-                  <time className="text-sm font-semibold text-amber-600 dark:text-amber-400">
-                    {post.date}
-                  </time>
-                  <div className="mt-1">
-                    <span className="text-xs bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 px-2 py-0.5 rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Column */}
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
-                    >
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-base text-gray-600 dark:text-gray-300 mb-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                    <span>💬 {post.comments} comments</span>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold"
-                    >
-                      Read more →
-                    </Link>
-                  </div>
-                </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                  {post.excerpt}
+                </p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold text-sm"
+                >
+                  Read more →
+                </Link>
               </div>
             </article>
           ))}
