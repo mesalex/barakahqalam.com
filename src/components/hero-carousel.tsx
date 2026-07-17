@@ -61,7 +61,7 @@ export default function HeroCarousel() {
 
       {/* ===== MOBILE: Carousel (one square slide) ===== */}
       <div className="relative md:hidden max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-        <div className="relative" style={{ minHeight: '400px' }}>
+        <div className="relative" style={{ minHeight: '520px' }}>
           {slides.map((slide, index) => (
             <div
               key={index}
