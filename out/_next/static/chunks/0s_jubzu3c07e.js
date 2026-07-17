@@ -1,0 +1,135 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,95057,(e,t,a)=>{"use strict";Object.defineProperty(a,"__esModule",{value:!0});var r={formatUrl:function(){return n},formatWithValidation:function(){return c},urlObjectKeys:function(){return l}};for(var i in r)Object.defineProperty(a,i,{enumerable:!0,get:r[i]});let s=e.r(90809)._(e.r(98183)),o=/https?|ftp|gopher|file/;function n(e){let{auth:t,hostname:a}=e,r=e.protocol||"",i=e.pathname||"",n=e.hash||"",l=e.query||"",c=!1;t=t?encodeURIComponent(t).replace(/%3A/i,":")+"@":"",e.host?c=t+e.host:a&&(c=t+(~a.indexOf(":")?`[${a}]`:a),e.port&&(c+=":"+e.port)),l&&"object"==typeof l&&(l=String(s.urlQueryToSearchParams(l)));let u=e.search||l&&`?${l}`||"";return r&&!r.endsWith(":")&&(r+=":"),e.slashes||(!r||o.test(r))&&!1!==c?(c="//"+(c||""),i&&"/"!==i[0]&&(i="/"+i)):c||(c=""),n&&"#"!==n[0]&&(n="#"+n),u&&"?"!==u[0]&&(u="?"+u),i=i.replace(/[?#]/g,encodeURIComponent),u=u.replace("#","%23"),`${r}${c}${i}${u}${n}`}let l=["auth","hash","host","hostname","href","path","pathname","port","protocol","query","search","slashes"];function c(e){return n(e)}},18581,(e,t,a)=>{"use strict";Object.defineProperty(a,"__esModule",{value:!0}),Object.defineProperty(a,"useMergedRef",{enumerable:!0,get:function(){return i}});let r=e.r(71645);function i(e,t){let a=(0,r.useRef)(null),i=(0,r.useRef)(null);return(0,r.useCallback)(r=>{if(null===r){let e=a.current;e&&(a.current=null,e());let t=i.current;t&&(i.current=null,t())}else e&&(a.current=s(e,r)),t&&(i.current=s(t,r))},[e,t])}function s(e,t){if("function"!=typeof e)return e.current=t,()=>{e.current=null};{let a=e(t);return"function"==typeof a?a:()=>e(null)}}("function"==typeof a.default||"object"==typeof a.default&&null!==a.default)&&void 0===a.default.__esModule&&(Object.defineProperty(a.default,"__esModule",{value:!0}),Object.assign(a.default,a),t.exports=a.default)},73668,(e,t,a)=>{"use strict";Object.defineProperty(a,"__esModule",{value:!0}),Object.defineProperty(a,"isLocalURL",{enumerable:!0,get:function(){return s}});let r=e.r(18967),i=e.r(52817);function s(e){if(!(0,r.isAbsoluteUrl)(e))return!0;try{let t=(0,r.getLocationOrigin)(),a=new URL(e,t);return a.origin===t&&(0,i.hasBasePath)(a.pathname)}catch(e){return!1}}},84508,(e,t,a)=>{"use strict";Object.defineProperty(a,"__esModule",{value:!0}),Object.defineProperty(a,"errorOnce",{enumerable:!0,get:function(){return r}});let r=e=>{}},22016,(e,t,a)=>{"use strict";Object.defineProperty(a,"__esModule",{value:!0});var r={default:function(){return b},useLinkStatus:function(){return y}};for(var i in r)Object.defineProperty(a,i,{enumerable:!0,get:r[i]});let s=e.r(90809),o=e.r(43476),n=s._(e.r(71645)),l=e.r(95057),c=e.r(8372),u=e.r(18581),m=e.r(18967),d=e.r(5550);e.r(33525);let h=e.r(88540),g=e.r(91949),p=e.r(73668),f=e.r(9396);function b(t){var a,r;let i,s,b,[y,v]=(0,n.useOptimistic)(g.IDLE_LINK_STATUS),k=(0,n.useRef)(null),{href:j,as:w,children:I,prefetch:N=null,passHref:A,replace:q,shallow:P,scroll:B,onClick:M,onMouseEnter:C,onTouchStart:T,legacyBehavior:S=!1,onNavigate:E,transitionTypes:U,ref:_,unstable_dynamicOnHover:R,...D}=t;i=I,S&&("string"==typeof i||"number"==typeof i)&&(i=(0,o.jsx)("a",{children:i}));let O=n.default.useContext(c.AppRouterContext),L=!1!==N,$=!1!==N?null===(r=N)||"auto"===r?f.FetchStrategy.PPR:f.FetchStrategy.Full:f.FetchStrategy.PPR,z="string"==typeof(a=w||j)?a:(0,l.formatUrl)(a);if(S){if(i?.$$typeof===Symbol.for("react.lazy"))throw Object.defineProperty(Error("`<Link legacyBehavior>` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's `<a>` tag."),"__NEXT_ERROR_CODE",{value:"E863",enumerable:!1,configurable:!0});s=n.default.Children.only(i)}let K=S?s&&"object"==typeof s&&s.ref:_,F=n.default.useCallback(e=>(null!==O&&(k.current=(0,g.mountLinkInstance)(e,z,O,$,L,v)),()=>{k.current&&((0,g.unmountLinkForCurrentNavigation)(k.current),k.current=null),(0,g.unmountPrefetchableInstance)(e)}),[L,z,O,$,v]),X={ref:(0,u.useMergedRef)(F,K),onClick(t){S||"function"!=typeof M||M(t),S&&s.props&&"function"==typeof s.props.onClick&&s.props.onClick(t),!O||t.defaultPrevented||function(t,a,r,i,s,o,l){if("u">typeof window){let c,{nodeName:u}=t.currentTarget;if("A"===u.toUpperCase()&&((c=t.currentTarget.getAttribute("target"))&&"_self"!==c||t.metaKey||t.ctrlKey||t.shiftKey||t.altKey||t.nativeEvent&&2===t.nativeEvent.which)||t.currentTarget.hasAttribute("download"))return;if(!(0,p.isLocalURL)(a)){i&&(t.preventDefault(),location.replace(a));return}if(t.preventDefault(),o){let e=!1;if(o({preventDefault:()=>{e=!0}}),e)return}let{dispatchNavigateAction:m}=e.r(99781);n.default.startTransition(()=>{m(a,i?"replace":"push",!1===s?h.ScrollBehavior.NoScroll:h.ScrollBehavior.Default,r.current,l)})}}(t,z,k,q,B,E,U)},onMouseEnter(e){S||"function"!=typeof C||C(e),S&&s.props&&"function"==typeof s.props.onMouseEnter&&s.props.onMouseEnter(e),O&&L&&(0,g.onNavigationIntent)(e.currentTarget,!0===R)},onTouchStart:function(e){S||"function"!=typeof T||T(e),S&&s.props&&"function"==typeof s.props.onTouchStart&&s.props.onTouchStart(e),O&&L&&(0,g.onNavigationIntent)(e.currentTarget,!0===R)}};return(0,m.isAbsoluteUrl)(z)?X.href=z:S&&!A&&("a"!==s.type||"href"in s.props)||(X.href=(0,d.addBasePath)(z)),b=S?n.default.cloneElement(s,X):(0,o.jsx)("a",{...D,...X,children:i}),(0,o.jsx)(x.Provider,{value:y,children:b})}e.r(84508);let x=(0,n.createContext)(g.IDLE_LINK_STATUS),y=()=>(0,n.useContext)(x);("function"==typeof a.default||"object"==typeof a.default&&null!==a.default)&&void 0===a.default.__esModule&&(Object.defineProperty(a.default,"__esModule",{value:!0}),Object.assign(a.default,a),t.exports=a.default)},2874,e=>{"use strict";var t=e.i(43476),a=e.i(22016),r=e.i(96406);function i(){let{theme:e,toggleTheme:i}=(0,r.useTheme)();return(0,t.jsxs)("div",{className:"flex items-center gap-4",children:[(0,t.jsx)(a.default,{href:"/",className:"text-2xl font-bold text-amber-600",children:"Barakah Qalam"}),(0,t.jsx)("button",{onClick:i,className:"p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors","aria-label":"Toggle theme",children:"light"===e?(0,t.jsx)("span",{className:"text-2xl",children:"🌙"}):(0,t.jsx)("span",{className:"text-2xl",children:"☀️"})})]})}e.s(["default",0,function(){return(0,t.jsx)("nav",{className:"navbar",children:(0,t.jsxs)("div",{className:"max-w-7xl mx-auto flex items-center justify-between",children:[(0,t.jsx)(i,{}),(0,t.jsxs)("div",{className:"flex items-center gap-6",children:[(0,t.jsx)(a.default,{href:"/books",className:"nav-link",children:"Books"}),(0,t.jsx)(a.default,{href:"/apparel",className:"nav-link",children:"Apparel"}),(0,t.jsx)(a.default,{href:"/free-resources",className:"nav-link",children:"Free Resources"}),(0,t.jsx)(a.default,{href:"/blog",className:"nav-link",children:"Blog"}),(0,t.jsx)(a.default,{href:"/about",className:"nav-link",children:"About"}),(0,t.jsx)(a.default,{href:"/contact",className:"nav-link",children:"Contact"})]})]})})}],2874)},54231,e=>{"use strict";var t=e.i(43476),a=e.i(22016);e.s(["default",0,function(){return(0,t.jsx)("footer",{className:"footer",children:(0,t.jsxs)("div",{className:"max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 py-6",children:[(0,t.jsxs)("div",{className:"flex items-center gap-2",children:[(0,t.jsx)("span",{className:"text-amber-600 font-bold text-lg",children:"Barakah Qalam"}),(0,t.jsx)("span",{className:"text-gray-400 text-sm hidden sm:inline",children:"—"}),(0,t.jsx)("span",{className:"text-gray-500 dark:text-gray-400 text-sm hidden sm:inline",children:"Thoughtful Islamic art & literature"})]}),(0,t.jsxs)("div",{className:"flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400",children:[(0,t.jsx)(a.default,{href:"/books",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"Books"}),(0,t.jsx)(a.default,{href:"/apparel",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"Apparel"}),(0,t.jsx)(a.default,{href:"/free-resources",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"Free Resources"}),(0,t.jsx)(a.default,{href:"/about",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"About"}),(0,t.jsx)(a.default,{href:"/contact",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"Contact"})]}),(0,t.jsxs)("div",{className:"flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500",children:[(0,t.jsxs)("div",{className:"flex gap-3",children:[(0,t.jsx)("a",{href:"#",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"🐦"}),(0,t.jsx)("a",{href:"#",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"📸"}),(0,t.jsx)("a",{href:"#",className:"hover:text-amber-600 dark:hover:text-amber-400",children:"📱"})]}),(0,t.jsx)("span",{className:"hidden sm:inline",children:"© 2024"})]})]})})}])},18566,(e,t,a)=>{t.exports=e.r(76562)},19624,e=>{"use strict";var t=e.i(43476),a=e.i(18566);let r=[{slug:"names-of-allah",name:"Names of Allah Books",emoji:"🤲"},{slug:"islamic-english",name:"Islamic English Books",emoji:"📚"},{slug:"islamic-coloring",name:"Islamic Coloring Books",emoji:"🎨"},{slug:"islamic-japanese",name:"Islamic Japanese Books",emoji:"🇯🇵"},{slug:"islamic-turkish",name:"Islamic Turkish Books",emoji:"🇹🇷"},{slug:"islamic-spanish",name:"Islamic Spanish Books",emoji:"🇪🇸"}],i=[{slug:"99-names-of-allah",title:"99 Names of Allah",subtitle:"A Coloring Book for Reflection & Contemplation",description:"A beautiful collection of Islamic calligraphy coloring pages featuring the 99 Names of Allah. Each name is rendered in elegant Arabic calligraphy surrounded by intricate botanical arabesques.",longDescription:`Discover the beauty and depth of the 99 Names of Allah through the meditative practice of coloring.
+
+This carefully crafted coloring book features:
+• All 99 Names of Allah in stunning Arabic calligraphy
+• Intricate botanical arabesque patterns surrounding each name
+• High-quality, single-sided pages to prevent bleed-through
+• English translation and transliteration for each Name
+• Brief reflections to deepen your understanding
+
+Whether you're an experienced artist or picking up colored pencils for the first time, this book offers a peaceful way to connect with the Divine Names while creating something beautiful.
+
+Perfect for:
+• Daily spiritual practice and meditation
+• Islamic studies for children and adults
+• Meaningful Ramadan activity
+• Unique Islamic gift for family and friends`,coverImage:"/carousel/3.png",carouselImage:"/carousel/3.png",price:"$7.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE1?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/99-names-coloring",category:"Coloring Book",categories:["names-of-allah","islamic-coloring","islamic-english"],pages:108,format:"8.5 x 11 inches, Paperback",seoKeywords:["99 names of Allah coloring book","Islamic coloring book","Asma ul Husna","Arabic calligraphy coloring","Islamic art therapy","Ramadan activity book","Muslim coloring book","Names of Allah for kids"]},{slug:"islamic-geometric-patterns",title:"Islamic Geometric Patterns",subtitle:"Master the Art of Sacred Geometry",description:"Master the art of Islamic geometric design with these intricate coloring pages. Features 50+ patterns ranging from simple stars to complex 12-pointed rosettes.",longDescription:`Journey into the mesmerizing world of Islamic geometric patterns — where mathematics meets spirituality.
+
+This comprehensive coloring book includes:
+• 50+ geometric patterns arranged from beginner to advanced
+• Classic Islamic motifs: stars, rosettes, girih tiles, and more
+• Step-by-step construction guides for key patterns
+• Historical context and spiritual significance of each design
+• High-quality paper suitable for colored pencils, markers, and gel pens
+
+Islamic geometric patterns represent the infinite nature of creation — a visual reminder that underlying all diversity is a single, unifying principle. As you color these intricate designs, you'll experience the same meditative focus that has inspired artists and architects for centuries.
+
+Great for:
+• Art therapy and stress relief
+• Understanding Islamic art and architecture
+• Developing patience and focus
+• Beautiful home decor — frame your finished pages!`,coverImage:"/carousel/009.png",carouselImage:"/carousel/009.png",price:"$9.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE2?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/islamic-geometric-coloring",category:"Coloring Book",categories:["islamic-coloring","islamic-english"],pages:120,format:"8.5 x 11 inches, Paperback",seoKeywords:["Islamic geometric patterns coloring book","sacred geometry coloring","Islamic art book","geometric coloring book for adults","Islamic architecture patterns","mindfulness coloring","Islamic design book"]},{slug:"arabic-calligraphy-basics",title:"Arabic Calligraphy Basics",subtitle:"Beginner-Friendly Coloring & Practice",description:"Learn the fundamentals of Arabic calligraphy with beginner-friendly coloring exercises. Practice strokes, letterforms, and complete compositions.",longDescription:`Begin your journey into the timeless art of Arabic calligraphy with this hands-on practice book.
+
+Designed for complete beginners, this book provides:
+• Introduction to Arabic script and letterforms
+• Tracing exercises for individual letters in Naskh and Thuluth styles
+• Progressive compositions from single words to full phrases
+• Beautiful Islamic phrases and Quranic verses to practice
+• High-quality paper that handles ink without bleeding
+• Tips on traditional tools: qalam, ink, and paper
+
+Arabic calligraphy is more than writing — it's a spiritual practice that has been refined over 1,400 years. Each stroke carries intention, each curve reflects devotion.
+
+Ideal for:
+• Beginners curious about Arabic script
+• Muslims wanting to beautify their Arabic writing
+• Artists exploring new mediums
+• Islamic school supplementary material
+• Meaningful Ramadan or Eid gift`,coverImage:"/carousel/011.png",carouselImage:"/carousel/011.png",price:"$8.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE3?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/arabic-calligraphy-practice",category:"Educational",categories:["islamic-coloring","islamic-english"],pages:96,format:"8.5 x 11 inches, Paperback",seoKeywords:["Arabic calligraphy book","learn Arabic calligraphy","Islamic calligraphy practice","Arabic lettering for beginners","Naskh script practice","Thuluth calligraphy","Arabic writing workbook"]},{slug:"mosque-architecture",title:"Mosque Architecture",subtitle:"A Visual Journey Through Sacred Spaces",description:"Explore stunning mosque designs from around the world with detailed coloring pages. From the Blue Mosque to the Great Mosque of Djenné.",longDescription:`Travel the world through the lens of Islamic architecture — no passport required.
+
+This unique coloring book takes you on a visual tour of:
+• 30+ iconic mosques from 20 countries
+• Architectural styles: Ottoman, Mughal, Persian, Moorish, West African, and modern
+• Detailed renderings of domes, minarets, mihrabs, and courtyards
+• Historical notes and architectural insights for each mosque
+• Single-sided pages with architectural detail close-ups
+
+Featured mosques include:
+• Sultan Ahmed (Blue) Mosque, Istanbul
+• Sheikh Zayed Grand Mosque, Abu Dhabi
+• Hassan II Mosque, Casablanca
+• Great Mosque of Djenn\xe9, Mali
+• Faisal Mosque, Islamabad
+• And many more...
+
+A perfect gift for:
+• Architecture enthusiasts
+• Travel lovers and culture explorers
+• Islamic history students
+• Anyone who appreciates beautiful sacred spaces`,coverImage:"/carousel/16.png",carouselImage:"/carousel/16.png",price:"$10.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE4?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/mosque-architecture-coloring",category:"Educational",categories:["islamic-coloring","islamic-english"],pages:128,format:"8.5 x 11 inches, Paperback",seoKeywords:["Mosque architecture coloring book","Islamic architecture book","famous mosques coloring","Islamic travel book","mosque coloring pages","world architecture coloring","Islamic cultural book"]},{slug:"prophetic-stories",title:"Prophetic Stories",subtitle:"Illustrated Tales from Islamic Tradition",description:"Beautiful illustrations of beloved Islamic stories with educational coloring pages. Stories of the Prophets brought to life through art.",longDescription:`Bring the timeless stories of the Prophets to life through art and reflection.
+
+This beautifully illustrated book includes:
+• 25+ stories from the lives of the Prophets (peace be upon them)
+• Full-page illustrations ready for coloring
+• Summarized stories in simple, accessible language
+• Quranic references for each story
+• Discussion questions for family learning
+• Arabic vocabulary words and their meanings
+
+Stories include:
+• Prophet Nuh (Noah) and the Ark
+• Prophet Ibrahim (Abraham) and his unwavering faith
+• Prophet Musa (Moses) and the parting of the sea
+• Prophet Yunus (Jonah) and the whale
+• Prophet Isa (Jesus) and his miracles
+• Prophet Muhammad ﷺ — the Seal of the Prophets
+
+Designed for:
+• Islamic weekend schools and madrasas
+• Family story time and discussions
+• Children ages 6-14 (and adults too!)
+• Ramadan evening activities
+• Building a love for the Prophets in young hearts`,coverImage:"/carousel/009.png",carouselImage:"/carousel/009.png",price:"$8.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE5?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/prophetic-stories-coloring",category:"Children's Book",categories:["islamic-coloring","islamic-english"],pages:104,format:"8.5 x 11 inches, Paperback",seoKeywords:["stories of the prophets coloring book","Islamic children's book","Prophet stories for kids","Islamic activity book","Quran stories coloring","Muslim kids book","Islamic education coloring"]},{slug:"moon-and-stars",title:"Moon & Stars",subtitle:"Celestial Islamic Designs & Cosmic Patterns",description:"Celestial Islamic designs featuring moon phases, stars, and cosmic patterns. A meditative journey through the night sky in Islamic art.",longDescription:`Explore the celestial beauty of Islamic art through the motif of the moon and stars.
+
+This dreamy coloring book features:
+• Moon phases in Islamic geometric frames
+• Star patterns from 5-pointed to 16-pointed designs
+• Crescent moon motifs in various artistic styles
+• Quranic verses about the heavens and celestial bodies
+• Astronomy-inspired geometric tessellations
+• Cosmic landscapes blending science and spirituality
+
+The moon and stars hold special significance in Islam — the lunar calendar marks our months, the crescent symbolizes renewal, and the stars guided travelers and inspired poets. This book celebrates that connection between faith and the cosmos.
+
+Perfect for:
+• Night-time relaxation and winding down
+• Astronomy and science enthusiasts
+• Spiritual meditation and reflection
+• Ramadan and Eid decor inspiration
+• Anyone who loves looking up at the stars`,coverImage:"/carousel/16.png",carouselImage:"/carousel/16.png",price:"$8.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE6?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/moon-stars-coloring",category:"Coloring Book",categories:["islamic-coloring","islamic-english"],pages:96,format:"8.5 x 11 inches, Paperback",seoKeywords:["moon and stars coloring book","Islamic celestial art","crescent moon coloring","Islamic astronomy art","Ramadan coloring book","night sky coloring","Islamic pattern book"]},{slug:"sample-book-preview",title:"Sample Book Preview",subtitle:"A demonstration page to preview the book detail layout with lorem ipsum placeholder content.",description:"This is a sample book entry designed to showcase the book detail page layout. It contains ample lorem ipsum text to demonstrate typography, spacing, and design elements.",longDescription:`## Chapter I — Origins
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Chapter II — The Journey
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+
+• Beautifully crafted pages with intricate patterns
+• High-quality paper suitable for all coloring mediums
+• Single-sided designs to prevent bleed-through
+• Inspirational quotes and reflections throughout
+• Perfect for beginners and experienced colorists alike
+
+## Chapter III — The Art
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+
+## Chapter IV — The Reflection
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.`,coverImage:"/carousel/16.png",carouselImage:"/carousel/16.png",price:"$9.99",amazonUrl:"https://www.amazon.com/dp/B0EXAMPLE?tag=barakahqalam-20",gumroadUrl:"https://gumroad.com/l/sample-book",category:"Educational",categories:["islamic-english"],pages:144,format:"8.5 x 11 inches, Paperback",seoKeywords:["sample coloring book","lorem ipsum preview","book layout demo","Islamic art preview","coloring book sample"]}];var s=e.i(2874),o=e.i(54231),n=e.i(22016),l=e.i(71645);function c(){let e=(0,a.useParams)(),l=(0,a.useSearchParams)(),c=e.slug,u=Math.max(1,parseInt(l.get("page")||"1",10)||1),m=r.find(e=>e.slug===c),d=i.filter(e=>e.categories.includes(c)),h=Math.ceil(d.length/10),g=d.slice((u-1)*10,10*u);return m?(0,t.jsxs)("div",{className:"min-h-screen bg-white text-gray-900 font-sans dark:bg-gray-900 dark:text-gray-100",children:[(0,t.jsx)(s.default,{}),(0,t.jsx)("section",{className:"section",children:(0,t.jsxs)("div",{className:"max-w-5xl mx-auto",children:[(0,t.jsx)(n.default,{href:"/books",className:"text-amber-600 dark:text-amber-400 hover:text-amber-700 text-sm mb-4 inline-block",children:"← All Collections"}),(0,t.jsxs)("h1",{className:"text-4xl md:text-5xl font-bold mb-2",children:[(0,t.jsx)("span",{className:"mr-3",children:m.emoji}),m.name]}),(0,t.jsxs)("p",{className:"text-gray-600 dark:text-gray-300 text-lg",children:[d.length," book",1!==d.length?"s":""," in this collection"]})]})}),(0,t.jsx)("section",{className:"section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800",children:(0,t.jsx)("div",{className:"max-w-5xl mx-auto",children:0===d.length?(0,t.jsxs)("div",{className:"text-center py-16",children:[(0,t.jsx)("p",{className:"text-gray-500 dark:text-gray-400 text-lg",children:"No books in this category yet. Check back soon!"}),(0,t.jsx)(n.default,{href:"/books",className:"text-amber-600 dark:text-amber-400 hover:text-amber-700 mt-4 inline-block",children:"Browse all collections →"})]}):(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("div",{className:"space-y-0 divide-y divide-gray-200 dark:divide-gray-700",children:g.map(e=>(0,t.jsx)("div",{className:"py-8 md:py-10",children:(0,t.jsxs)("div",{className:"flex flex-col md:flex-row gap-6 md:gap-8 items-start",children:[(0,t.jsx)(n.default,{href:`/books/${e.slug}`,className:"w-full md:w-2/5 flex-shrink-0",children:(0,t.jsx)("div",{className:"aspect-[2/3] max-w-xs mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 hover:shadow-xl transition-shadow",children:(0,t.jsx)("img",{src:e.coverImage,alt:e.title,className:"w-full h-full object-contain"})})}),(0,t.jsxs)("div",{className:"w-full md:w-3/5 flex flex-col justify-center",children:[(0,t.jsx)("span",{className:"text-xs text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-wide mb-1",children:e.category}),(0,t.jsx)(n.default,{href:`/books/${e.slug}`,children:(0,t.jsx)("h3",{className:"text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 hover:text-amber-600 dark:hover:text-amber-400 transition-colors",children:e.title})}),(0,t.jsx)("p",{className:"text-base text-gray-600 dark:text-gray-300 mb-4",children:e.description}),(0,t.jsx)("div",{className:"flex flex-col sm:flex-row gap-3",children:(0,t.jsx)(n.default,{href:`/books/${e.slug}`,className:"inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors text-sm sm:text-base",children:"View Details"})})]})]})},e.slug))}),h>1&&(0,t.jsxs)("div",{className:"flex justify-center items-center gap-4 mt-12",children:[u>1&&(0,t.jsx)(n.default,{href:`/books/category/${c}?page=${u-1}`,className:"px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-semibold text-sm transition-colors",children:"← Previous"}),(0,t.jsxs)("span",{className:"text-sm text-gray-600 dark:text-gray-400",children:["Page ",u," of ",h]}),u<h&&(0,t.jsx)(n.default,{href:`/books/category/${c}?page=${u+1}`,className:"px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-semibold text-sm transition-colors",children:"Next →"})]})]})})}),(0,t.jsx)(o.default,{})]}):(0,t.jsxs)("div",{className:"min-h-screen bg-white text-gray-900 font-sans dark:bg-gray-900 dark:text-gray-100",children:[(0,t.jsx)(s.default,{}),(0,t.jsxs)("section",{className:"section text-center",children:[(0,t.jsx)("h1",{className:"text-4xl font-bold mb-4",children:"Category not found"}),(0,t.jsx)(n.default,{href:"/books",className:"text-amber-600 hover:text-amber-700",children:"← Back to Books"})]}),(0,t.jsx)(o.default,{})]})}e.s(["default",0,function(){return(0,t.jsx)(l.Suspense,{fallback:(0,t.jsx)("div",{className:"min-h-screen bg-white dark:bg-gray-900"}),children:(0,t.jsx)(c,{})})}],19624)}]);

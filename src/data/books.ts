@@ -10,10 +10,22 @@ export interface Book {
   amazonUrl: string;
   gumroadUrl: string;
   category: string;
+  categories: string[];
   pages: number;
   format: string;
   seoKeywords: string[];
 }
+
+export const bookCategories = [
+  { slug: "names-of-allah", name: "Names of Allah Books", emoji: "🤲" },
+  { slug: "islamic-english", name: "Islamic English Books", emoji: "📚" },
+  { slug: "islamic-coloring", name: "Islamic Coloring Books", emoji: "🎨" },
+  { slug: "islamic-japanese", name: "Islamic Japanese Books", emoji: "🇯🇵" },
+  { slug: "islamic-turkish", name: "Islamic Turkish Books", emoji: "🇹🇷" },
+  { slug: "islamic-spanish", name: "Islamic Spanish Books", emoji: "🇪🇸" },
+] as const;
+
+export type CategorySlug = typeof bookCategories[number]['slug'];
 
 export const books: Book[] = [
   {
@@ -45,6 +57,7 @@ Perfect for:
       "https://www.amazon.com/dp/B0EXAMPLE1?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/99-names-coloring",
     category: "Coloring Book",
+    categories: ["names-of-allah", "islamic-coloring", "islamic-english"],
     pages: 108,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -87,6 +100,7 @@ Great for:
       "https://www.amazon.com/dp/B0EXAMPLE2?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/islamic-geometric-coloring",
     category: "Coloring Book",
+    categories: ["islamic-coloring", "islamic-english"],
     pages: 120,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -130,6 +144,7 @@ Ideal for:
       "https://www.amazon.com/dp/B0EXAMPLE3?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/arabic-calligraphy-practice",
     category: "Educational",
+    categories: ["islamic-coloring", "islamic-english"],
     pages: 96,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -177,6 +192,7 @@ A perfect gift for:
       "https://www.amazon.com/dp/B0EXAMPLE4?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/mosque-architecture-coloring",
     category: "Educational",
+    categories: ["islamic-coloring", "islamic-english"],
     pages: 128,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -226,6 +242,7 @@ Designed for:
       "https://www.amazon.com/dp/B0EXAMPLE5?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/prophetic-stories-coloring",
     category: "Children's Book",
+    categories: ["islamic-coloring", "islamic-english"],
     pages: 104,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -269,6 +286,7 @@ Perfect for:
       "https://www.amazon.com/dp/B0EXAMPLE6?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/moon-stars-coloring",
     category: "Coloring Book",
+    categories: ["islamic-coloring", "islamic-english"],
     pages: 96,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -321,6 +339,7 @@ Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saep
       "https://www.amazon.com/dp/B0EXAMPLE?tag=barakahqalam-20",
     gumroadUrl: "https://gumroad.com/l/sample-book",
     category: "Educational",
+    categories: ["islamic-english"],
     pages: 144,
     format: "8.5 x 11 inches, Paperback",
     seoKeywords: [
@@ -337,13 +356,10 @@ export function getBookBySlug(slug: string): Book | undefined {
   return books.find((book) => book.slug === slug);
 }
 
-export function getBooksByCategory(category: string): Book[] {
-  return books.filter((book) => book.category === category);
+export function getBooksByCategorySlug(slug: string): Book[] {
+  return books.filter((book) => book.categories.includes(slug));
 }
 
-export const bookCategories = [
-  "All",
-  "Coloring Book",
-  "Educational",
-  "Children's Book",
-] as const;
+export function getCategoryBySlug(slug: string) {
+  return bookCategories.find((c) => c.slug === slug);
+}
