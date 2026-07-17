@@ -95,18 +95,9 @@ export default function HeroCarousel() {
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 max-w-md mx-auto">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-md mx-auto">
                   {slide.subtitle}
                 </p>
-                <Link
-                  href={slide.link}
-                  className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-xl text-sm sm:text-base transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25"
-                >
-                  {slide.cta}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
             </div>
           ))}
