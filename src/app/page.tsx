@@ -12,8 +12,7 @@ const featuredBooks = [
     title: "99 Names of Allah",
     description: "A beautiful collection of Islamic calligraphy coloring pages featuring the 99 Names of Allah.",
     cover: "/carousel/3.png",
-    category: "Coloring Book",
-    emoji: "📖"
+    category: "Coloring Book"
   },
   {
     slug: "islamic-geometric-patterns",
@@ -21,7 +20,6 @@ const featuredBooks = [
     description: "Master the art of Islamic geometric design with these intricate coloring pages.",
     cover: "/carousel/009.png",
     category: "Coloring Book",
-    emoji: "🎨"
   },
   {
     slug: "arabic-calligraphy-basics",
@@ -29,7 +27,6 @@ const featuredBooks = [
     description: "Learn the fundamentals of Arabic calligraphy with beginner-friendly coloring exercises.",
     cover: "/carousel/011.png",
     category: "Educational",
-    emoji: "✨"
   },
   {
     slug: "mosque-architecture",
@@ -37,7 +34,6 @@ const featuredBooks = [
     description: "Explore stunning mosque designs from around the world with detailed coloring pages.",
     cover: "/carousel/16.png",
     category: "Educational",
-    emoji: "🕌"
   },
   {
     slug: "prophetic-stories",
@@ -45,7 +41,6 @@ const featuredBooks = [
     description: "Beautiful illustrations of beloved Islamic stories with educational coloring pages.",
     cover: "/carousel/009.png",
     category: "Children's Book",
-    emoji: "🌟"
   },
   {
     slug: "moon-and-stars",
@@ -53,7 +48,6 @@ const featuredBooks = [
     description: "Celestial Islamic designs featuring moon phases, stars, and cosmic patterns.",
     cover: "/carousel/16.png",
     category: "Coloring Book",
-    emoji: "🌙"
   }
 ];
 
@@ -62,25 +56,31 @@ const featuredApparel = [
     id: "inna-lillahi",
     title: "\"Inna Lillahi\" T-Shirt",
     description: "Wear your faith with this beautiful \"Inna Lillahi\" Islamic calligraphy t-shirt.",
-    emoji: "👕"
+    image: "/carousel/001.png"
   },
   {
     id: "alhamdulillah",
     title: "\"Alhamdulillah\" Tee",
     description: "Beautiful \"Alhamdulillah\" Islamic calligraphy t-shirt for daily wear.",
-    emoji: "👕"
+    image: "/carousel/002.png"
   },
   {
     id: "geometric-tee",
     title: "Islamic Geometric Tee",
     description: "Stunning Islamic geometric pattern t-shirt with modern design.",
-    emoji: "👕"
+    image: "/carousel/003.png"
   },
   {
     id: "bismillah-hoodie",
     title: "Bismillah Hoodie",
     description: "Cozy \"Bismillah\" Islamic calligraphy hoodie for cold days.",
-    emoji: "👕"
+    image: "/carousel/004.png"
+  },
+  {
+    id: "subhanallah",
+    title: "\"Subhanallah\" T-Shirt",
+    description: "Glorify Allah with this elegant \"Subhanallah\" Arabic calligraphy design.",
+    image: "/carousel/005.png"
   }
 ];
 
@@ -160,20 +160,28 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredApparel.map((item) => (
-              <div key={item.id} className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all p-6 text-center">
-                <div className="text-5xl mb-4">{item.emoji}</div>
-                <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  {item.description}
-                </p>
-                <Link
-                  href="/apparel"
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-5 rounded-lg text-sm transition-colors"
-                >
-                  Coming Soon
+              <div key={item.id} className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                <Link href="/apparel" className="block aspect-square bg-gradient-to-br from-amber-50 to-amber-100 dark:from-gray-600 dark:to-gray-500 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </Link>
+                <div className="p-4">
+                  <h3 className="font-bold text-base text-gray-900 dark:text-gray-100 mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">
+                    {item.description}
+                  </p>
+                  <Link
+                    href="/apparel"
+                    className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors"
+                  >
+                    View on Amazon
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
