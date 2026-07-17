@@ -77,7 +77,7 @@ export default function HeroCarousel() {
                 href={slide.link}
                 className="w-full flex items-center justify-center group"
               >
-                <div className="relative w-40 h-52 sm:w-52 sm:h-64 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 group-hover:shadow-amber-500/30 group-hover:scale-[1.02] transition-all duration-300">
+                <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 group-hover:shadow-amber-500/30 group-hover:scale-[1.02] transition-all duration-300">
                   <img
                     src={slide.image}
                     alt={slide.title}

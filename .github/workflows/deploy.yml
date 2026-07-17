@@ -33,10 +33,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Sync build to repo root (Pages deploys from /)
+        run: cp -r out/* .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: .
 
   deploy:
     environment:
