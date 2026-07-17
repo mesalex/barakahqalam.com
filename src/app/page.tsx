@@ -101,7 +101,7 @@ export default function Home() {
             Beautiful Islamic coloring books for all ages — perfect for relaxation, learning, and spiritual reflection.
           </p>
           <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
-            {featuredBooks.map((book) => (
+            {featuredBooks.slice(0, 3).map((book) => (
               <div key={book.slug} className="py-8 md:py-10">
                 <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                   <Link href={`/books/${book.slug}`} className="w-full md:w-2/5 flex-shrink-0">
@@ -159,7 +159,7 @@ export default function Home() {
             Wear your faith with pride. Beautiful Islamic calligraphy and geometric designs on premium apparel.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredApparel.map((item) => (
+            {featuredApparel.slice(0, 3).map((item) => (
               <div key={item.id} className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
                 <Link href="/apparel" className="block aspect-square bg-gradient-to-br from-amber-50 to-amber-100 dark:from-gray-600 dark:to-gray-500 overflow-hidden">
                   <img

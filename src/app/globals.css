@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark mode: class-based (toggled via JS) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ===== LIGHT MODE (default) ===== */
 :root {
   --bg-primary: #ffffff;

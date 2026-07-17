@@ -74,7 +74,7 @@ export default function BlogFeed() {
         </h2>
 
         <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
-          {posts.map((post, index) => (
+          {posts.slice(0, 5).map((post, index) => (
             <article
               key={post.slug}
               className="py-6 md:py-8"
