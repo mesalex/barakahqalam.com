@@ -70,7 +70,7 @@ export default function BlogFeed() {
     <section className="section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          From the Studio
+          From the Qalam Studio
         </h2>
 
         <div className="space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
