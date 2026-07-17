@@ -55,81 +55,93 @@ export default function HeroCarousel() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="relative max-w-6xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-        {/* Slides container with fixed aspect ratio for stability */}
-        <div className="relative" style={{ minHeight: '380px' }}>
+    <div className="relative w-full overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-14 lg:py-20">
+        {/* Slides container */}
+        <div className="relative" style={{ minHeight: '340px' }}>
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 flex flex-col md:flex-row items-center gap-6 md:gap-12 transition-all duration-700 ease-in-out ${
+              className={`absolute inset-0 flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-10 lg:gap-16 transition-all duration-700 ease-in-out ${
                 index === currentSlide
                   ? 'opacity-100 translate-x-0 z-10'
                   : index < currentSlide
-                  ? 'opacity-0 -translate-x-8 z-0'
-                  : 'opacity-0 translate-x-8 z-0'
+                  ? 'opacity-0 -translate-x-12 z-0'
+                  : 'opacity-0 translate-x-12 z-0'
               }`}
             >
-              {/* Image */}
-              <div className="w-full md:w-1/2 flex-shrink-0 flex items-center justify-center">
-                <div className="w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800">
+              {/* Image — clickable, links to book page */}
+              <Link
+                href={slide.link}
+                className="w-full md:w-2/5 lg:w-[42%] flex-shrink-0 flex items-center justify-center group"
+              >
+                <div className="relative w-40 h-52 sm:w-52 sm:h-64 md:w-72 md:h-88 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200 dark:from-gray-700 dark:to-gray-800 group-hover:shadow-amber-500/30 group-hover:scale-[1.02] transition-all duration-300">
                   <img
                     src={slide.image}
                     alt={slide.title}
                     className="w-full h-full object-contain"
                   />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white bg-amber-500/90 px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold">
+                      View Details →
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Text */}
-              <div className="w-full md:w-1/2 text-center md:text-left px-2">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+              <div className="w-full md:w-3/5 lg:w-[58%] text-center md:text-left px-2 sm:px-0">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4 leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-md">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 lg:mb-8 max-w-lg md:max-w-none">
                   {slide.subtitle}
                 </p>
                 <Link
                   href={slide.link}
-                  className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg text-base transition-all transform hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-xl text-sm sm:text-base transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25"
                 >
                   {slide.cta}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Navigation Buttons — positioned relative to the section, not absolute slides */}
+        {/* Nav buttons — vertically centered on the image area */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-20"
+          className="absolute left-1 sm:left-3 top-[45%] sm:top-[40%] -translate-y-1/2 bg-white/95 hover:bg-white dark:bg-gray-800/95 dark:hover:bg-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-20 hover:scale-110"
           aria-label="Previous slide"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-20"
+          className="absolute right-1 sm:right-3 top-[45%] sm:top-[40%] -translate-y-1/2 bg-white/95 hover:bg-white dark:bg-gray-800/95 dark:hover:bg-gray-700 p-2 sm:p-3 rounded-full shadow-lg transition-all z-20 hover:scale-110"
           aria-label="Next slide"
         >
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Indicators */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-6 sm:mt-8">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? 'bg-amber-500 w-6'
-                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 w-2'
+                  ? 'bg-amber-500 w-8'
+                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 w-2'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
